@@ -100,11 +100,11 @@
 
 | **이름** | **역할** | **담당 업무** |
 |:--------:|:--------:|:-------------|
-| <a href="https://github.com/smiinii"><img src="https://avatars.githubusercontent.com/smiinii" width="70px" style="border-radius:50%"/><br/><sub><b>이성민</b></sub></a> | BE / Infra | FastAPI 서버, 배포 환경 구성, EC2 & Docker 운영, UI 보조 |
-| <a href="https://github.com/fostacion"><img src="https://avatars.githubusercontent.com/fostacion" width="70px" style="border-radius:50%"/><br/><sub><b>이융현</b></sub></a> | BE / HW | Raspberry Pi GPS 연동, ETA 알고리즘 설계 |
-| <a href="https://github.com/limwr706"><img src="https://avatars.githubusercontent.com/limwr706" width="70px" style="border-radius:50%"/><br/><sub><b>임완렬</b></sub></a> | FE / UX | UI 디자인, Android 지도 UI, WebSocket 연동, 알림 기능 |
-| <a href="https://github.com/yim0327"><img src="https://avatars.githubusercontent.com/yim0327" width="70px" style="border-radius:50%"/><br/><sub><b>임재영</b></sub></a> | BE / Docs | 서버 구조 설계, DB 모델링, Redis 연동, 보고서 및 문서화 |
-| <a href="https://github.com/hantaee22"><img src="https://avatars.githubusercontent.com/hantaee22" width="70px" style="border-radius:50%"/><br/><sub><b>한태연</b></sub></a> | FE / Mobile | UI 디자인, Android 지도 UI, WebSocket 연동, 알림 기능|
+| <a href="https://github.com/smiinii"><img src="https://avatars.githubusercontent.com/smiinii" width="70px" style="border-radius:50%"/><br/><sub><b>이성민</b></sub></a> | BE / Docs | Raspberry Pi GPS 연동, 보고서 및 문서화, 배포 환경 구성 |
+| <a href="https://github.com/fostacion"><img src="https://avatars.githubusercontent.com/fostacion" width="70px" style="border-radius:50%"/><br/><sub><b>이융현</b></sub></a> | BE / Mobile | FastAPI 서버 구성, ETA 알고리즘 설계, DB 모델링 |
+| <a href="https://github.com/limwr706"><img src="https://avatars.githubusercontent.com/limwr706" width="70px" style="border-radius:50%"/><br/><sub><b>임완렬</b></sub></a> | FE / UX | UI 디자인, 기능 BE-FE 연동, 시간표 알람설정 등 추가 기능 구현 |
+| <a href="https://github.com/yim0327"><img src="https://avatars.githubusercontent.com/yim0327" width="70px" style="border-radius:50%"/><br/><sub><b>임재영</b></sub></a> | BE / Mobile | FastAPI 서버 구성, API 연동, 서버 구조 설계 |
+| <a href="https://github.com/hantaee22"><img src="https://avatars.githubusercontent.com/hantaee22" width="70px" style="border-radius:50%"/><br/><sub><b>한태연</b></sub></a> | FE / Docs | Raspberry Pi GPS 연동, 보고서 및 문서화, UI 디자인 |
 
 ---
 
