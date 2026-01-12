@@ -8,18 +8,10 @@
 <br/>
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/65f6186a-03e2-436e-9d32-cf8492cd69d8" alt="Main" width="100%"/>
+  <img src="https://github.com/user-attachments/assets/d889abb3-68be-48f0-94f0-d036a54ed13d" alt="Main" width="100%"/>
 </div>
 
 <br/>
-
-<div align="center">
-  <a /**href="https://"**/">홈페이지</a>
-    |  
-  <a /**href="https://"**/>Swagger</a>
-    |  
-  <a /**href="https://"**>Notion</a>
-</div>
 
 ---
 
@@ -62,36 +54,62 @@
 
 ## 🚀 주요 기능
 
-1. **실시간 위치 추적**
-   - GPS 모듈이 2~3초마다 버스 좌표를 전송
-   - 앱은 WebSocket을 통해 실시간으로 지도에 표시
+1. **로그인 및 지도 확대·축소**
+	- 로그인 후 메인 지도 화면 진입
+	- 지도 드래그/확대·축소로 주변 정류장/노선 확인
+	- Google Maps 기반 지도 인터랙션 제공
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/xxxxxx" alt="실시간 지도 시연" width="80%"/>
+	<img src="https://github.com/user-attachments/assets/xxxxxx" alt="로그인 및 지도 확대/축소 시연" width="80%"/>
 </div>
 
-2. **ETA(도착예정시간) 계산**
-   - FastAPI 서버에서 T map / NAVER Directions API를 활용
-   - 교통 상황 기반으로 각 정류장별 예상 도착 시간 산출
+2. **[등교] 셔틀버스 실시간 위치 / 시내버스 도착 정보 보기**
+	- 셔틀버스: GPS 모듈이 2~3초마다 좌표 전송 → 앱에서 WebSocket으로 수신해 지도에 실시간 반영
+	- 시내버스: 정류장 선택 시 도착 예정 정보 조회(공공/외부 버스 API 연동)
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/xxxxxx" alt="ETA 계산 시연" width="80%"/>
+	<img src="https://github.com/user-attachments/assets/xxxxxx" alt="등교: 셔틀 실시간 위치 + 시내버스 도착 정보 시연" width="80%"/>
 </div>
 
-3. **정류장별 도착 알림**
-   - 사용자가 즐겨찾기한 정류장에 도착 임박 시 푸시 알림 전송
-   - WorkManager를 이용한 주기적 ETA 모니터링
+3. **[하교] 셔틀버스 실시간 위치 / 시내버스 도착 정보 보기**
+	- 하교 모드에서도 동일하게 실시간 셔틀 위치를 지도에서 확인
+	- 하교 시간대 기준으로 시내버스 도착 정보 확인 흐름 제공(정류장/노선 중심)
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/xxxxxx" alt="정류장 알림 시연" width="80%"/>
+	<img src="https://github.com/user-attachments/assets/xxxxxx" alt="하교: 셔틀 실시간 위치 + 시내버스 도착 정보 시연" width="80%"/>
 </div>
 
-4. **지도 기반 UI/UX**
-   - Google Maps API 기반 실시간 지도
-   - 노선, 정류장, 버스 마커를 직관적으로 표시
+4. **호관별 건물 도착 예측 / 예측 분석 + 최적 경로 지도 보기 (미구현)**
+	- 정류장 → 호관(건물)까지의 도착 예측 및 분석 리포트 제공
+	- T map / NAVER Directions 기반 최적 경로를 지도에 시각화 (미구현) ?
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/xxxxxx" alt="UX/UI 시연" width="80%"/>
+	<img src="https://github.com/user-attachments/assets/xxxxxx" alt="호관별 도착 예측/분석 + 최적 경로 시연(미구현)" width="80%"/>
+</div>
+
+5. **셔틀버스 알림 설정 및 관리**
+	- 즐겨찾기 정류장/노선 기반으로 알림 조건 설정
+	- 도착 임박 시 푸시 알림 제공
+	- WorkManager로 주기적 ETA 모니터링 및 알림 트리거 관리
+
+<div align="center">
+	<img src="https://github.com/user-attachments/assets/xxxxxx" alt="셔틀버스 알림 설정 및 관리 시연" width="80%"/>
+</div>
+
+6. **설문 기반 도착 정보 공유**
+	- 사용자 설문 응답을 기반으로 혼잡도/도착 체감 정보 등을 공유
+	- 수집된 데이터로 도착 정보의 보조 지표 제공(커뮤니티 기반)
+
+<div align="center">
+	<img src="https://github.com/user-attachments/assets/xxxxxx" alt="설문 기반 도착 정보 공유 시연" width="80%"/>
+</div>
+
+7. **셔틀버스 시간표 제공**
+	- 노선/시간대별 셔틀버스 시간표 제공
+	- 등교/하교 모드에 맞춰 시간표를 빠르게 탐색할 수 있도록 구성
+
+<div align="center">
+	<img src="https://github.com/user-attachments/assets/xxxxxx" alt="셔틀버스 시간표 제공 시연" width="80%"/>
 </div>
 
 ---
