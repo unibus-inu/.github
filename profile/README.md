@@ -30,9 +30,9 @@
 
 ## ✨ 서비스 소개
 
-『 유니버스(UNIBUS) 』는 인천대학교(University of Incheon)의 “유니(Uni)”와  
-“버스(Bus)”를 결합한 이름으로, 인천대생을 하나의 연결된 공간(Universe)으로 묶는  
-**실시간 통학버스 위치 제공 앱서비스**입니다.
+『 유니버스(UNIBUS) 』는 인천대학교의 학우를 뜻하는 “유니(Uni)”와 </br>
+ “버스(Bus)”를 결합한 이름으로, 인천대생을 하나의 연결된 공간(Universe)으로 묶는 </br>
+ **실시간 통학버스 위치 제공 앱서비스**입니다.
 
 </br>
 
@@ -55,61 +55,55 @@
 ## 🚀 주요 기능
 
 1. **로그인 및 지도 확대·축소**
+
 	- 로그인 후 메인 지도 화면 진입
 	- 지도 드래그/확대·축소로 주변 정류장/노선 확인
-	- Google Maps 기반 지도 인터랙션 제공
-
+	- Android Google Maps SDK를 활용해 지도 화면 제공
 <div align="center">
-	<img src="https://github.com/user-attachments/assets/xxxxxx" alt="로그인 및 지도 확대/축소 시연" width="80%"/>
+	<img src="https://github.com/user-attachments/assets/7c57f2f3-68f2-4a49-ae56-0b51de71213a" alt="로그인 및 지도 확대/축소 시연" width="20%"/>
 </div>
 
-2. **[등교] 셔틀버스 실시간 위치 / 시내버스 도착 정보 보기**
-	- 셔틀버스: GPS 모듈이 2~3초마다 좌표 전송 → 앱에서 WebSocket으로 수신해 지도에 실시간 반영
-	- 시내버스: 정류장 선택 시 도착 예정 정보 조회(공공/외부 버스 API 연동)
-
+2. **[등교/하교] 셔틀버스 실시간 위치 / 시내버스 도착 정보 보기**
+	- 셔틀버스 실시간 위치
+		- **GPS Module → NMEA 데이터 스트림 → Raspberry Pi** </br>
+          **reading/parsing 후 → Backend(FastAPI/Uvicorn)** 순으로 좌표 수집
+		- 앱은 서버에서 전달받은 위치를 지도에 실시간 반영
+	- 시내버스 도착 정보
+		- 공공데이터 포털 API를 통해 정류장 도착 정보 조회/표시
 <div align="center">
-	<img src="https://github.com/user-attachments/assets/xxxxxx" alt="등교: 셔틀 실시간 위치 + 시내버스 도착 정보 시연" width="80%"/>
+	<img src="" alt="등교: 셔틀 실시간 위치 + 시내버스 도착 정보 시연" width="20%"/>
+</div>
+<div align="center">
+	<img src="" alt="하교: 셔틀 실시간 위치 + 시내버스 도착 정보 시연" width="20%"/>
 </div>
 
-3. **[하교] 셔틀버스 실시간 위치 / 시내버스 도착 정보 보기**
-	- 하교 모드에서도 동일하게 실시간 셔틀 위치를 지도에서 확인
-	- 하교 시간대 기준으로 시내버스 도착 정보 확인 흐름 제공(정류장/노선 중심)
-
-<div align="center">
-	<img src="https://github.com/user-attachments/assets/xxxxxx" alt="하교: 셔틀 실시간 위치 + 시내버스 도착 정보 시연" width="80%"/>
-</div>
-
-4. **호관별 건물 도착 예측 / 예측 분석 + 최적 경로 지도 보기 (미구현)**
+3. **호관별 건물 도착 예측 / 예측 분석 + 최적 경로 지도 보기 (미구현)**
 	- 정류장 → 호관(건물)까지의 도착 예측 및 분석 리포트 제공
-	- T map / NAVER Directions 기반 최적 경로를 지도에 시각화 (미구현) ?
-
+	- Tmap API 기반 최적 경로를 지도에 시각화 (MVP 미구현)
 <div align="center">
-	<img src="https://github.com/user-attachments/assets/xxxxxx" alt="호관별 도착 예측/분석 + 최적 경로 시연(미구현)" width="80%"/>
+	<img src="" alt="호관별 도착 예측/분석" width="20%"/>
 </div>
 
-5. **셔틀버스 알림 설정 및 관리**
-	- 즐겨찾기 정류장/노선 기반으로 알림 조건 설정
-	- 도착 임박 시 푸시 알림 제공
-	- WorkManager로 주기적 ETA 모니터링 및 알림 트리거 관리
-
+4. **셔틀버스 알림 설정 및 관리**
+	- 즐겨찾기 정류장/노선 기반으로 알림 조건 설정 및 관리
+	- 서버에서 계산/수집되는 최신 위치/도착 정보에 따라 도착 임박 알림 제공
+	- 설정/즐겨찾기/알림 상태 등은 서버에 저장하여 일관성 있게 관리
 <div align="center">
-	<img src="https://github.com/user-attachments/assets/xxxxxx" alt="셔틀버스 알림 설정 및 관리 시연" width="80%"/>
+	<img src="" alt="셔틀버스 알림 설정 및 관리 시연" width="20%"/>
 </div>
 
-6. **설문 기반 도착 정보 공유**
-	- 사용자 설문 응답을 기반으로 혼잡도/도착 체감 정보 등을 공유
-	- 수집된 데이터로 도착 정보의 보조 지표 제공(커뮤니티 기반)
-
+5. **설문 기반 도착 정보 공유**
+	- 사용자 설문 응답을 기반으로 도착 체감/혼잡 등 보조 정보를 공유
+	- 수집된 설문 데이터는 서버에서 저장·집계 후 화면에 반영
 <div align="center">
-	<img src="https://github.com/user-attachments/assets/xxxxxx" alt="설문 기반 도착 정보 공유 시연" width="80%"/>
+	<img src="https://github.com/user-attachments/assets/8923bb3a-265b-4482-9463-5d8658992c8e" alt="설문 기반 도착 정보 공유 시연" width="20%"/>
 </div>
 
-7. **셔틀버스 시간표 제공**
-	- 노선/시간대별 셔틀버스 시간표 제공
-	- 등교/하교 모드에 맞춰 시간표를 빠르게 탐색할 수 있도록 구성
-
+6. **미추홀 캠퍼스 셔틀버스 시간표 제공**
+	- 미추홀 캠퍼스 셔틀버스 시간표 정보 제공
+	- 추후 서비스 확장 시 송도캠퍼스와 동일하게 실시간 위치 정보 제공 예정
 <div align="center">
-	<img src="https://github.com/user-attachments/assets/xxxxxx" alt="셔틀버스 시간표 제공 시연" width="80%"/>
+	<img src="" alt="셔틀버스 시간표 제공 시연" width="20%"/>
 </div>
 
 ---
@@ -183,7 +177,7 @@
 ## 📐 아키텍쳐
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/f0178978-a060-49dd-affe-9f9a93e6e424" alt="I:Dam_Architecture" width="70%"/>
+  <img src="https://github.com/user-attachments/assets/4ba6e4e2-7491-4c7b-af35-050703efb5fa" alt="I:Dam_Architecture" width="70%"/>
 </div>
 
 ---
@@ -191,7 +185,7 @@
 ## 🗄️ ERD
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/8f5266ca-4bbd-4b6b-aedf-d774b35eeb81" alt="I:Dam_ERD" width="70%"/>
+  <img src="" alt="I:Dam_ERD" width="70%"/>
 </div>
 
 ---
